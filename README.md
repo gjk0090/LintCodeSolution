@@ -1,2 +1,2 @@
 # LintCodeSolution
-lint code solution
+lint code solution based on Nine Chapter lessons
