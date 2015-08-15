@@ -1,2 +1,0 @@
-# LintCodeSolution
-lint code solution
