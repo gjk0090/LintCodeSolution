@@ -2,9 +2,6 @@ package lesson2;
 
 import java.util.*;
 
-import util.CollectionBuilder;
-import util.PrintUtil;
-
 /**
  * contains duplicates
  * A=[1,2,3,4]
@@ -20,10 +17,10 @@ import util.PrintUtil;
 public class MergeSortedArray2 {
 
 	public static void main(String[] args) {
-		ArrayList<Integer> A = CollectionBuilder.buildArrayList(new int[] {1,2,3,4});
-		ArrayList<Integer> B = CollectionBuilder.buildArrayList(new int[] {2,4,5,6});
+		ArrayList<Integer> A = new ArrayList<Integer>(Arrays.asList(1,2,3,4));
+		ArrayList<Integer> B = new ArrayList<Integer>(Arrays.asList(2,4,5,6));
 		
-		PrintUtil.printList(mergeSortedArray(A,B));
+		System.out.println(mergeSortedArray(A,B));
 
 	}
 	

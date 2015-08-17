@@ -1,6 +1,6 @@
 package lesson2;
 
-import util.PrintUtil;
+import java.util.Arrays;
 /**
  * Follow up for "Remove Duplicates":
  * What if duplicates are allowed at most twice?
@@ -12,7 +12,7 @@ public class RemoveDuplicatesFromSortedArray2 {
 	public static void main(String[] args) {
 		int[] a={1,1,1,2,2,3};
 		System.out.println(removeDuplicates(a));
-		PrintUtil.printArray(a);
+		System.out.println(Arrays.toString(a));
 	}
     public static int removeDuplicates(int[] nums) {
     	if(nums==null){return 0;}

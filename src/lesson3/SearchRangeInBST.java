@@ -2,7 +2,7 @@ package lesson3;
 
 import java.util.*;
 
-import util.PrintUtil;
+
 import util.TreeBuilder;
 import util.TreeNode;
 
@@ -10,8 +10,8 @@ public class SearchRangeInBST {
 
 	public static void main(String[] args) {
 		TreeNode root = TreeBuilder.buildTree(new Integer[][] {{4},{2,6},{1,3,5,7}});
-		PrintUtil.printList(searchRange2(root,2,5));
-		PrintUtil.printList(searchRange(root,2,5));
+		System.out.println(searchRange2(root,2,5));
+		System.out.println(searchRange(root,2,5));
 	}
 
     public static ArrayList<Integer> searchRange2(TreeNode root, int k1, int k2) {

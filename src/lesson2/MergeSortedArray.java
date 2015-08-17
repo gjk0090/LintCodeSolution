@@ -1,6 +1,6 @@
 package lesson2;
 
-import util.PrintUtil;
+import java.util.Arrays;
 
 public class MergeSortedArray {
 
@@ -9,7 +9,7 @@ public class MergeSortedArray {
 		int[] A = {1,3,5,7,9,0,0,0,0};
 		int[] B = {2,4,6,8};
 		mergeSortedArray(A,5,B,4);
-		PrintUtil.printArray(A);
+		System.out.println(Arrays.toString(A));
 	}
 	
     public static void mergeSortedArray(int[] A, int m, int[] B, int n) {

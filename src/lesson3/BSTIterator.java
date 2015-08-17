@@ -2,7 +2,7 @@ package lesson3;
 
 import java.util.*;
 
-import util.PrintUtil;
+
 import util.TreeBuilder;
 import util.TreeNode;
 

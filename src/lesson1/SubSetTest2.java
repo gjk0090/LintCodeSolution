@@ -1,7 +1,7 @@
 package lesson1;
 import java.util.*;
 
-import util.PrintUtil;
+
 
 /**
  * subset of [1,2,2]
@@ -23,7 +23,7 @@ public class SubSetTest2 {
     	subsetHelper(result, input, 0 ,subset);
 
     	for(List<Integer> l : result){
-    		PrintUtil.printList(l);
+    		System.out.println(l);
     	}
 	}
 

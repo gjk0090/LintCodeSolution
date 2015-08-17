@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import util.PrintUtil;
+
 import util.TreeBuilder;
 import util.TreeNode;
 
@@ -23,7 +23,7 @@ public class BFS2 {
 		
 		ArrayList<ArrayList<Integer>> result = levelOrderBottom(root);
 		for(ArrayList<Integer> l : result){
-			PrintUtil.printList(l);
+			System.out.println(l);
 		}
 	}
 

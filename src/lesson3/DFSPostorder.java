@@ -3,7 +3,7 @@ package lesson3;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import util.PrintUtil;
+
 import util.TreeBuilder;
 import util.TreeNode;
 
@@ -17,9 +17,9 @@ public class DFSPostorder {
 			{ 8, 9, 10, 11, 12, 13, 14, 15 } 
 		});
 		
-		PrintUtil.printList(postorderTraversal(root));
-		PrintUtil.printList(postorderTraversal2(root));
-		PrintUtil.printList(postorderTraversal3(root));
+		System.out.println(postorderTraversal(root));
+		System.out.println(postorderTraversal2(root));
+		System.out.println(postorderTraversal3(root));
 	}
 
 

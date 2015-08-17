@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Stack;
 
-import util.PrintUtil;
+
 import util.TreeBuilder;
 import util.TreeNode;
 
@@ -19,9 +19,9 @@ public class DFSPreorder {
 			{ 8, 9, 10, 11, 12, 13, 14, 15 } 
 		});
 		
-		PrintUtil.printList(preorderTraversal(root));
-		PrintUtil.printList(preorderTraversal2(root));
-		PrintUtil.printList(preorderTraversal3(root));
+		System.out.println(preorderTraversal(root));
+		System.out.println(preorderTraversal2(root));
+		System.out.println(preorderTraversal3(root));
 	}
 	
 	

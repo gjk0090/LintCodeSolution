@@ -3,7 +3,7 @@ package lesson3;
 import java.util.ArrayList;
 import java.util.List;
 
-import util.PrintUtil;
+
 import util.TreeBuilder;
 import util.TreeNode;
 
@@ -33,7 +33,7 @@ public class RemoveNodeBST {
 		//BFS print for testing
 		ArrayList result = BFS.levelOrder(root);
 		for(Object l : result){
-			PrintUtil.printList((List<Integer>) l);
+			System.out.println((List<Integer>) l);
 		}	
 	}
 	

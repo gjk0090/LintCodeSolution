@@ -2,7 +2,7 @@ package lesson3;
 
 import java.util.*;
 
-import util.PrintUtil;
+
 import util.TreeBuilder;
 import util.TreeNode;
 
@@ -19,7 +19,7 @@ public class BFSZigzag {
 		
 		ArrayList<ArrayList<Integer>> result = zigzagLevelOrder(root);
 		for(ArrayList<Integer> l : result){
-			PrintUtil.printList(l);
+			System.out.println(l);
 		}
 
 	}

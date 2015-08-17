@@ -3,7 +3,7 @@ package lesson2;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import util.PrintUtil;
+
 /**
  * Given a sorted array of n integers, find the starting and ending position of a given target value.
  * If the target is not found in the array, return [-1, -1].
@@ -21,7 +21,7 @@ public class SearchForRange {
 		A = new ArrayList<Integer>( Arrays.asList(new Integer[] {1,2,3,4,5,5,5,6,7,8,9}));
 		
 		
-		PrintUtil.printList(searchRange2(A,9));
+		System.out.println(searchRange2(A,9));
 		
 	}
 	

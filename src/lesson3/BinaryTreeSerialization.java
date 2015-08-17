@@ -2,7 +2,7 @@ package lesson3;
 
 import java.util.*;
 
-import util.PrintUtil;
+
 import util.TreeBuilder;
 import util.TreeNode;
 
@@ -62,7 +62,6 @@ public class BinaryTreeSerialization {
     	if(data==null || data.length()==0){return null;}
     	
     	String[] input = data.split(",");
-    	//PrintUtil.printArray(input);
     	
     	int index = 0;
     	

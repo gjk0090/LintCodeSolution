@@ -2,7 +2,7 @@ package lesson3;
 
 import java.util.*;
 
-import util.PrintUtil;
+
 import util.TreeBuilder;
 import util.TreeNode;
 
@@ -16,9 +16,9 @@ public class DFSInorder {
 			{ 8, 9, 10, 11, 12, 13, 14, 15 } 
 		});
 		
-		PrintUtil.printList(inorderTraversal(root));
-		PrintUtil.printList(inorderTraversal2(root));
-		PrintUtil.printList(inorderTraversal3(root));
+		System.out.println(inorderTraversal(root));
+		System.out.println(inorderTraversal2(root));
+		System.out.println(inorderTraversal3(root));
 	}
 
 

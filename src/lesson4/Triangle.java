@@ -2,17 +2,16 @@ package lesson4;
 
 import java.util.*;
 
-import util.CollectionBuilder;
-
 public class Triangle {
 
 	public static void main(String[] args) {
 
 		ArrayList<ArrayList<Integer>> triangle = new ArrayList<ArrayList<Integer>>();
-		triangle.add(CollectionBuilder.buildArrayList(new int[]{1}));
-		triangle.add(CollectionBuilder.buildArrayList(new int[]{2,3}));
-		triangle.add(CollectionBuilder.buildArrayList(new int[]{4,5,6}));
-		triangle.add(CollectionBuilder.buildArrayList(new int[]{7,8,9,10}));
+		triangle.add(new ArrayList<Integer>(Arrays.asList(1)));
+		triangle.add(new ArrayList<Integer>(Arrays.asList(2,3)));
+		triangle.add(new ArrayList<Integer>(Arrays.asList(4,5,6)));
+		triangle.add(new ArrayList<Integer>(Arrays.asList(7,8,9,10)));
+
 		System.out.println(minimumTotal3(triangle));
 	}
 

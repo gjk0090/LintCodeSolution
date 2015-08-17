@@ -2,7 +2,7 @@ package lesson3;
 
 import java.util.*;
 
-import util.PrintUtil;
+
 import util.TreeBuilder;
 import util.TreeNode;
 
@@ -17,10 +17,10 @@ public class BFS {
 			{1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null}
 		});
 
-		PrintUtil.printList(levelOrderSimple(root));
+		System.out.println(levelOrderSimple(root));
 		ArrayList result = levelOrder(root);
 		for(Object l : result){
-			PrintUtil.printList((List<Integer>) l);
+			System.out.println((List<Integer>) l);
 		}
 	}
 	

@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import util.PrintUtil;
-
 public class Permutation2 {
 
 	public static void main(String[] args) {
@@ -35,7 +33,7 @@ public class Permutation2 {
 	        
 	    	if(input.size() == 0){
 	    		result.add(new ArrayList<Integer>(permutation)); //remember to copy list
-	    		PrintUtil.printList(permutation);
+	    		System.out.println(permutation);
 	    	}
 	       	for(int i = 0; i < input.size(); i++){
 	       		
