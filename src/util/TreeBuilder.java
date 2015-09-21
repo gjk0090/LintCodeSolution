@@ -62,7 +62,8 @@ public class TreeBuilder {
     	queue.offer(root);
     	
     	while(!queue.isEmpty()){
-
+    			if(index >= input.length){break;}
+    			
     			TreeNode node = queue.poll();
     			
     			if(node != null){

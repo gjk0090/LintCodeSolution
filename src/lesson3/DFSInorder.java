@@ -23,7 +23,7 @@ public class DFSInorder {
 
 
 
-	private static ArrayList<Integer> inorderTraversal(TreeNode root) {
+	public static ArrayList<Integer> inorderTraversal(TreeNode root) {
 		
 		ArrayList<Integer>  l = new ArrayList<Integer> ();
 		if(null == root){
