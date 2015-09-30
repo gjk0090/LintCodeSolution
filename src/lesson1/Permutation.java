@@ -1,8 +1,6 @@
 package lesson1;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Permutation {
 
@@ -17,7 +15,15 @@ public class Permutation {
 		
 		ArrayList<ArrayList<Integer>> result = permute((ArrayList<Integer>) input);
 		System.out.println(result.size());
+		
+		List<List<Integer>> result2 = permute2(new int[]{1,2,3});
+		for (List<Integer> list : result2) {
+			System.out.println(list);
+		}
+
 	}
+	
+	//list version
 	
 	 public static ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
 	        
@@ -27,6 +33,11 @@ public class Permutation {
 	        }
 	        List<Integer> permutation = new ArrayList<Integer>();
 	       	helper(result, nums ,permutation);
+	       	
+	       	//remove duplicate (permutation 2)
+//	       	Set set = new HashSet(result);
+//	       	result = new ArrayList(set);
+	       	
 	       	return result;
 	    }
 	       
@@ -34,7 +45,7 @@ public class Permutation {
 	        
 	    	if(input.size() == 0){
 	    		result.add(new ArrayList<Integer>(permutation)); //remember to copy list
-	    		System.out.println(permutation);
+	    		//System.out.println(permutation);
 	    	}
 	       	for(int i = 0; i < input.size(); i++){
 	       		permutation.add(input.get(i));
@@ -49,5 +60,71 @@ public class Permutation {
 	   	
 	   	
 	    }
+	    
+	    
+	    
+	    // array version
+	    
+	    public List<List<Integer>> permute(int[] nums) {
+	        
+	        List<List<Integer>> result = new ArrayList<>();
+	        List<Integer> curr = new ArrayList<>();
+	        boolean[] visited = new boolean[nums.length];
+	        re(result,curr,nums,visited);
+	        
+	        return result;
+	    }
+	    
+	    private void re(List<List<Integer>> result, List<Integer> curr, int[] nums, boolean[] visited){
+	        if(curr.size() == nums.length){
+	            result.add(new ArrayList<Integer>(curr));
+	        }
+	        
+	        for(int i=0; i<nums.length; i++){
+	            if(!visited[i]){
+	                curr.add(nums[i]);
+	                visited[i]=true;
+	                re(result,curr,nums,visited);
+	                curr.remove(curr.size()-1);
+	                visited[i]=false;
+	            }
+	        }
+	    }
+	    
+	    
+	    
+	    
+	    // array and addAll version
+	    
+	    public static List<List<Integer>> permute2(int[] nums) {
+	        
+	        List<List<Integer>> result = new ArrayList<>();
+	        List<Integer> curr = new ArrayList<>();
+	        boolean[] visited = new boolean[nums.length];
+	        result.addAll(re(curr,nums,visited));
+	        
+	        return result;
+	    }
+	    
+	    private static List<List<Integer>>  re(List<Integer> curr, int[] nums, boolean[] visited){
+	    	
+	    	List<List<Integer>> result = new ArrayList<>();
+	    	
+	        if(curr.size() == nums.length){
+	            result.add(new ArrayList<Integer>(curr));
+	        }
+	        
+	        for(int i=0; i<nums.length; i++){
+	            if(!visited[i]){
+	                curr.add(nums[i]);
+	                visited[i]=true;
+	                result.addAll(re(curr,nums,visited));
+	                curr.remove(curr.size()-1);
+	                visited[i]=false;
+	            }
+	        }
+			return result;
+	    }
+
 
 }

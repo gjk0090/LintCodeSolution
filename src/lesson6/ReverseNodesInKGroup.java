@@ -13,7 +13,7 @@ public class ReverseNodesInKGroup {
 	}
 
 	public static ListNode reverseKGroup(ListNode head, int k) {
-		// see if < k
+		// check if length< k
 		ListNode runner = head;
 		int counter = 0;
 		while(runner != null){
@@ -36,8 +36,9 @@ public class ReverseNodesInKGroup {
 			head = temp;
 		}
 		
+		// append rest nodes by recur
 		dummy.next = prev;
-		oriHead.next = reverseKGroup(head, k); //recur
+		oriHead.next = reverseKGroup(head, k);
 		
 		return dummy.next;
 	
