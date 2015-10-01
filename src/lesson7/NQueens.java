@@ -2,11 +2,22 @@ package lesson7;
 
 import java.util.*;
 
+/**
+ * N Queens problem is a problem of permutation of 0 to N-1 with a restriction (diagonal).
+ * use a list to represent one solution:
+ * solution 0-3-1-2 means
+ * O X X X		0
+ * X X X O		3
+ * X O X X		1
+ * X X O X		2
+ * @author gjk
+ *
+ */
 public class NQueens {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<ArrayList<String>> a = solveNQueens(4);
+		ArrayList<ArrayList<String>> a = solveNQueens(5);
 		for (ArrayList<String> l : a) {
 			System.out.println(l);
 		}
@@ -17,12 +28,6 @@ public class NQueens {
     	ArrayList<ArrayList<String>> answer = new ArrayList<>();
     	
     	ArrayList<Integer> solution = new ArrayList<>();
-    	
-//    	solution 0-3-1-2 means:
-//    	O X X X
-//    	X X X O
-//    	X O X X
-//    	X X O X
     	
     	boolean[] visited = new boolean[n];
     	
