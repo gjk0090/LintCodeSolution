@@ -62,14 +62,13 @@ public class TreeBuilder {
     	queue.offer(root);
     	
     	while(!queue.isEmpty()){
-    			if(index >= input.length){break;}
     			
     			TreeNode node = queue.poll();
     			
     			if(node != null){
     				
-    				String leftString = input[index++];
-    				String rightString = input[index++];
+    				String leftString = (index<input.length) ? input[index++] : "#";
+    				String rightString = (index<input.length) ? input[index++] : "#";
     				
     				TreeNode left = null;
     				TreeNode right = null;
