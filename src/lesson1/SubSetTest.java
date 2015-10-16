@@ -15,12 +15,15 @@ public class SubSetTest {
 		input.add(1);
 		input.add(2);
 		input.add(3);
+		input.add(4);
 		Collections.sort(input);
     	List<Integer> subset = new ArrayList<Integer>();
     	
     	//subsetHelper(result, input, 0 ,subset);
     	subsetHelper(result, input ,subset);
 
+    	
+    	result = subsets(new int[]{1,2,3,4});
     	for(List<Integer> l : result){
     		System.out.println(l);
     	}
@@ -59,15 +62,12 @@ public class SubSetTest {
     
     
     //array and addAll version
-    public List<List<Integer>> subsets(int[] nums) {
-        Arrays.sort(nums);
-        List<List<Integer>> result = new ArrayList<>();
+    public static List<List<Integer>> subsets(int[] nums) {
         List<Integer> subset = new ArrayList<>();
-        result.addAll(re(subset, nums,0));
-        return result;
+        return re(subset, nums,0);
     }
     
-    private List<List<Integer>> re(List<Integer> subset, int[]nums, int startPos){
+    private static List<List<Integer>> re(List<Integer> subset, int[]nums, int startPos){
         List<List<Integer>> result = new ArrayList<>();
 
         result.add(new ArrayList<Integer>(subset));
