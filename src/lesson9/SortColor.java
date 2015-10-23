@@ -32,7 +32,7 @@ public class SortColor {
     public static void sortColors2(int[] nums) {
         
         int start=0,end=nums.length-1;
-        for(int i=0; i<nums.length && i<end;i++){
+        for(int i=0; i<nums.length; i++){
 
             while (nums[i] == 2 && i < end) {
                 int temp = nums[i];
