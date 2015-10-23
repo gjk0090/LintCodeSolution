@@ -17,18 +17,38 @@ public class SortColor {
         
         int start=0,end=nums.length-1;
         for(int i=0; i<nums.length && i<end;i++){
+
+            if(nums[i]==2){
+                int temp=nums[i];nums[i]=nums[end];nums[end]=temp;
+                end--;
+            }
             if(nums[i]==0){
                 int temp=nums[i];nums[i]=nums[start];nums[start]=temp;
                 start++;
             }
-            if(nums[i]==2){
-                int temp=nums[i];nums[i]=nums[end];nums[end]=temp;
+        }
+    }
+    
+    public static void sortColors2(int[] nums) {
+        
+        int start=0,end=nums.length-1;
+        for(int i=0; i<nums.length && i<end;i++){
+
+            while (nums[i] == 2 && i < end) {
+                int temp = nums[i];
+                nums[i] = nums[end];
+                nums[end] = temp;
                 end--;
-                //if(nums[i]==0){i--;}
-                i--;
+                continue;
             }
-            
-            //if(nums[i]!=1){i--;}
+            while (nums[i] == 0 && i > start) {
+                int temp = nums[i];
+                nums[i] = nums[start];
+                nums[start] = temp;
+                start++;
+                continue;
+            }
+
         }
     }
 }
