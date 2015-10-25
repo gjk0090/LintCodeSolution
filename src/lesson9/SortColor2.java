@@ -5,10 +5,12 @@ import java.util.*;
 public class SortColor2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		int[] colors=  new int[]{3, 2, 2, 4, 4};
+		sortColors2(colors,4);
+		System.out.println(Arrays.toString(colors));
 	}
-    public void sortColors2(int[] colors, int k) {
+    public static void sortColors2(int[] colors, int k) {
         
         Map<Integer,Integer> map = new HashMap<Integer,Integer>();
         for(int i : colors){
@@ -19,14 +21,26 @@ public class SortColor2 {
             }
         }
         
-        for(int i=0;i<colors.length;i++){
-            for(int j=1;j<=k;j++){
-                if(!map.containsKey(j)){continue;}
-                for(int l=0;l<map.get(j);l++){
-                    colors[i]=j;
-                    i++;
-                }
-            }
+//        for(int i=0;i<colors.length;i++){
+//            for(int j=1;j<=k;j++){
+//                if(!map.containsKey(j)){continue;}
+//                for(int l=0;l<map.get(j);l++){
+//                    colors[i]=j;
+//                    i++;
+//                }
+//            }
+//        }
+        
+        int index=0;
+        
+        for(int i=1;i<=k;i++){
+        	
+        	if(map.get(i)==null){continue;} //important
+        	
+        	for(int j=0;j<map.get(i);j++){
+        		colors[index] = i;
+        		index++;
+        	}
         }
     }
     
