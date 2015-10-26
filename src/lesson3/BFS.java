@@ -16,20 +16,19 @@ public class BFS {
 			{ 8, 9, null, null, 12, 13, 14, 15 } ,
 			{1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null}
 		});
-
 		System.out.println(levelOrderSimple(root));
-		ArrayList result = levelOrder(root);
-		for(Object l : result){
-			System.out.println((List<Integer>) l);
+		ArrayList<ArrayList<Integer>> result = levelOrder(root);
+		for(ArrayList<Integer> l : result){
+			System.out.println(l);
 		}
 	}
-	
 	
     public static ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         if(root == null){return result;}
     	Queue<TreeNode> queue = new LinkedList<TreeNode>();
     	queue.offer(root);
+    	
     	while(!queue.isEmpty()){
             ArrayList<Integer> l = new ArrayList<Integer>();
             int size = queue.size();

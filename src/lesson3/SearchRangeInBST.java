@@ -40,13 +40,16 @@ public class SearchRangeInBST {
     	ArrayList<Integer> result = new ArrayList<Integer>();
     	if(root==null){return result;}
     	
-    	if(root.val > k1){
+    	if(root.val > k2){
     		result.addAll(searchRange(root.left,k1,k2));
     	}
     	if(k1 <= root.val && root.val <= k2){
+            //ascending order
+            result.addAll(searchRange(root.left,k1,k2));
     		result.add(root.val);
+    		result.addAll(searchRange(root.right,k1,k2));
     	}
-    	if(root.val < k2){
+    	if(root.val < k1){
     		result.addAll(searchRange(root.right,k1,k2));
     	}
     	

@@ -43,8 +43,8 @@ public class DFSInorder {
 			if(null != node.left){ // if has left
 				stack.push(new TreeNode(node.val)); // push node (value only)
 				stack.push(node.left); // push left
-			}else{
-				l.add(node.val); // return the value
+			}else{ //no left
+				l.add(node.val); // add the value
 			}
 		}
 		

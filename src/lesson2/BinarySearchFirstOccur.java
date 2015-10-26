@@ -26,33 +26,24 @@ public class BinarySearchFirstOccur {
 	
 	public static int binarySearch(int[] nums, int target) {
 		
-		if(nums == null || nums.length == 0){
-			return -1;
-		}
-		
-		int start = 0;
-		int end = nums.length;
-		
-		while(start + 1 < end){
-			
-			int middle = start + (end-start)/2;
-			
-			if(nums[middle] == target){
-				end = middle;
-			}else if(nums[middle] > target){
-				end = middle;
-			}else{
-				start = middle;
-			}
-		}
-		
-		if(nums[start] == target){
-			return start;
-		}else if(nums[end] == target){
-			return end;
-		}else{
-			return -1;
-		}
+        if(nums==null||nums.length==0){return -1;}
+        
+        int start = 0, end = nums.length-1;
+        while(start+1<end){
+            int middle = start+(end-start)/2;
+            
+            if(nums[middle]==target){
+                end=middle;
+            }else if(nums[middle]<target){
+                start=middle;
+            }else{//nums[middle]>target
+                end=middle;
+            }
+        }
+        
+        if(nums[start]==target){return start;}
+        if(nums[end]==target){return end;}
+        return -1;
 	}
 
 }

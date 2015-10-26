@@ -37,7 +37,7 @@ public class DFSPostorder {
 		while(!stack.isEmpty()){
 			TreeNode node = stack.pop();
 			
-			if(null != node.right || null != node.left){ // has 1 or more child
+			if(null != node.right || null != node.left){ // has child
 				stack.push(new TreeNode(node.val)); // push node (value only)
 			}else{
 				l.add(node.val); // return the value

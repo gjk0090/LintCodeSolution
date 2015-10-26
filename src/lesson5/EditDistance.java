@@ -16,7 +16,7 @@ public class EditDistance {
     	if(word1.length()==0){return word2.length();}
     	if(word2.length()==0){return word1.length();}
     	
-    	int[][] result = new int[word1.length()+1][word2.length()+1];
+    	int[][] result = new int[word1.length()+1][word2.length()+1]; //important!!
     	
     	//init
     	for(int i=0; i<word1.length()+1; i++){
@@ -30,7 +30,7 @@ public class EditDistance {
     	for(int i=1; i<word1.length()+1; i++){
     		for(int j=1; j<word2.length()+1; j++){
     			if(word1.charAt(i-1) == word2.charAt(j-1)){
-    				result[i][j] = result[i-1][j-1];
+    				result[i][j] = result[i-1][j-1]; //important!!!
     			}else{
     				int temp = Math.min(result[i-1][j], result[i][j-1]);
     				result[i][j] = Math.min(result[i-1][j-1], temp) + 1;

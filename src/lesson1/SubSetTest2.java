@@ -48,10 +48,7 @@ public class SubSetTest2 {
     //array version
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         Arrays.sort(nums);
-        List<List<Integer>> result = new ArrayList<>();
-        List<Integer> subset = new ArrayList<>();
-        result.addAll(re(subset, nums, 0));
-        return result;
+        return re(new ArrayList<>(), nums, 0);
     }
     
     private List<List<Integer>> re(List<Integer> subset, int[] nums, int startPos){

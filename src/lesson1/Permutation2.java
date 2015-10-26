@@ -22,41 +22,36 @@ public class Permutation2 {
 
 	}
 	
-	 public static ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
-	        
-	        ArrayList<ArrayList<Integer>>  result = new ArrayList<ArrayList<Integer>>();
-	        if(nums == null){
-	            return result;
-	        }
-	        List<Integer> permutation = new ArrayList<Integer>();
-	       	helper(result, nums ,permutation);
-	       	return result;
-	    }
-	       
-	    public static void helper(ArrayList<ArrayList<Integer>> result, List<Integer> input,  List<Integer> permutation ) {
-	        
-	    	if(input.size() == 0){
-	    		result.add(new ArrayList<Integer>(permutation)); //remember to copy list
-	    		//System.out.println(permutation);
-	    	}
-	       	for(int i = 0; i < input.size(); i++){
-	       		
-	       		if(i > 0 && input.get(i)==input.get(i-1)){
-	       		}else{
-		       		permutation.add(input.get(i));
-		       		
-		       		//remove the element and copy to new list
-		       		List<Integer> tempInput = new ArrayList<Integer>(input);
-		       		tempInput.remove(i);
-		       		
-		       		helper(result, tempInput, permutation); 
-		       		permutation.remove(permutation.size()-1);
-	       		}
-	       	}
-	   	
-	   	
-	    }
-	    
+	
+    public static ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if(nums==null || nums.size()==0){return result;}
+        
+        Collections.sort(nums); //important
+        
+        return helper(new ArrayList<Integer>(),nums,new boolean[nums.size()]);
+    }
+    
+    private static ArrayList<ArrayList<Integer>> helper(ArrayList<Integer> curr, ArrayList<Integer> nums, boolean[] visited){
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        
+        if(curr.size() == nums.size()){
+            result.add(new ArrayList<Integer>(curr));
+        }
+        
+        for(int i=0; i<nums.size(); i++){
+        	
+            if(visited[i] || (i>0&&!visited[i-1]&&nums.get(i)==nums.get(i-1))){continue;} //super important!!!
+            
+            visited[i]=true;
+            curr.add(nums.get(i));
+            result.addAll(helper(curr,nums,visited));
+            curr.remove(curr.size()-1);
+            visited[i]=false;
+        }
+        
+        return result;
+    }
 	    
 	    
 	    

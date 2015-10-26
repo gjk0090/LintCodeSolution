@@ -12,7 +12,6 @@ import util.TreeNode;
 public class BFS2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		TreeNode root = TreeBuilder.buildTree(new Integer[][] {
 			{ 1 }, 
 			{ 2, 3 }, 
@@ -36,7 +35,7 @@ public class BFS2 {
     	while(!queue.isEmpty()){
     		ArrayList<Integer> l = new ArrayList<Integer>();
     		int size = queue.size();
-    		for(int i=0; i<size; i++){
+    		for(int i = 0; i < size; i++){
     			TreeNode node = queue.poll();
     			l.add(node.val);
     			if(node.left != null){
@@ -47,7 +46,6 @@ public class BFS2 {
     			}
     		}
     		result.add(0, l);
-    		
     	}
 		return result;
 	}

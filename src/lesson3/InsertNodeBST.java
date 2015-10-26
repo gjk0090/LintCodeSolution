@@ -15,29 +15,18 @@ public class InsertNodeBST {
 	}
 	
 	
-    /**
-     * @param root: The root of the binary search tree.
-     * @param node: insert this node into the binary search tree
-     * @return: The root of the new binary search tree.
-     */
-    public static TreeNode insertNode(TreeNode root, TreeNode node) {
-    	if(root == null){return node;}
-    	
-    	if(node.val>root.val){
-    		if(root.right != null){
-    			insertNode(root.right,node);
-    		}else{
-    			root.right = node;
-    		}
-    	}else{
-    		if(root.left != null){
-    			insertNode(root.left,node);
-    		}else{
-    			root.left = node;
-    		}
-    	}
-		return root;
 
+    public TreeNode insertNode(TreeNode root, TreeNode node) {
+        
+        if(root==null){return node;}
+        
+        if(node.val > root.val){
+            root.right = insertNode(root.right, node);
+        }else{
+            root.left = insertNode(root.left, node);
+        }
+        
+        return root;   
     }
 
     
