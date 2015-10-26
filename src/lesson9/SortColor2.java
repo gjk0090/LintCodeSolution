@@ -10,6 +10,8 @@ public class SortColor2 {
 		sortColors2(colors,4);
 		System.out.println(Arrays.toString(colors));
 	}
+	
+	//counting sort
     public static void sortColors2(int[] colors, int k) {
         
         Map<Integer,Integer> map = new HashMap<Integer,Integer>();
@@ -20,16 +22,6 @@ public class SortColor2 {
                 map.put(i,1);
             }
         }
-        
-//        for(int i=0;i<colors.length;i++){
-//            for(int j=1;j<=k;j++){
-//                if(!map.containsKey(j)){continue;}
-//                for(int l=0;l<map.get(j);l++){
-//                    colors[i]=j;
-//                    i++;
-//                }
-//            }
-//        }
         
         int index=0;
         
