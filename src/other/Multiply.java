@@ -42,37 +42,29 @@ big integer multiplication
     }
     
     public static int[] multiply(int[] num1, int[] num2){
+        //reverse numbers
         reverse(num1);
         reverse(num2);
-        int[] answer = new int[num1.length+num2.length+1];
         
+        //answer array
+        int[] answer = new int[num1.length+num2.length];
         
+        //cmpute answer
         for(int i=0; i<num1.length; i++){
-            int carry=0;
-            //int j = 0;
             for(int j=0; j<num2.length; j++){
                 
-                int product = num1[i] * num2[j] + carry + answer[i+j];
-                carry=product/10;
+                int product = num1[i] * num2[j] + answer[i+j];
+                int carry=product/10;
                 product = product%10;
-                answer[i+j] += product;
-                if(answer[i+j]>=10){
-                    answer[i+j+1] += answer[i+j]/10;
-                    answer[i+j] = answer[i+j]%10;
-                }
-                
+                answer[i+j] = product;
+                answer[i+j+1] += carry;
             }
-//            answer[i+num2.length-1] += carry;
-//            if(answer[i+num2.length-1]>=10){
-//                    answer[i+num2.length] += answer[i+num2.length-1]/10;
-//                    answer[i+num2.length-1] = answer[i+num2.length-1]%10;
-//            }
         }
         
-        
-        
+        //reverse answer
         reverse(answer);
         
+        //remove zeros
         int length=answer.length;
         for(int i=0;i<answer.length;i++){
             if(answer[i]==0){
@@ -81,12 +73,12 @@ big integer multiplication
                 break;
             }
         }
-        
         int[] newAnswer = new int[length];
-        
         for(int i=0;i<newAnswer.length;i++){
             newAnswer[i] = answer[i+answer.length-length];
         }
+        
+        //return
         return newAnswer;
     }   
     
