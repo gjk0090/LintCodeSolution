@@ -25,7 +25,7 @@ public class NextPermutation {
             return nums;
         }
         
-        // swap the element with the smallest element larger than it
+        // swap the element with the smallest element larger than it (the last one if has duplicate)
         int biggerIndex = index+1;
         for(int i=index+1; i<nums.length; i++){
             if(nums[index]<nums[i] && nums[i]<=nums[biggerIndex]){ //important: <=, for duplicates like 2,4,3,3,1
